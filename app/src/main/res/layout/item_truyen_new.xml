@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="#1a1a1a">
+
+    <ImageView
+        android:id="@+id/imgTruyen"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/pham_nhan_tu_tien"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/tvTenTruyen"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Tên truyện"
+        android:textColor="#fff"
+        android:textSize="13sp"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/tvTacGia"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Thể loại"
+        android:textColor="#aaaaaa"
+        android:textSize="12sp"
+        android:layout_marginTop="2dp" />
+</LinearLayout>
