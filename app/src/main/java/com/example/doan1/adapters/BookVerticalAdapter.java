@@ -17,15 +17,17 @@ import com.example.doan1.models.Book;
 import java.util.List;
 
 public class BookVerticalAdapter extends RecyclerView.Adapter<BookVerticalAdapter.BookViewHolder> {
-    private Context context;
-    private List<Book> bookList;
 
-    private OnBookClickListener listener;
+    private final Context context;
+    private final List<Book> bookList;
+    private final OnBookClickListener listener;
 
+    // Giao diện lắng nghe click
     public interface OnBookClickListener {
         void onBookClick(Book book);
     }
 
+    // Constructor
     public BookVerticalAdapter(Context context, List<Book> books, OnBookClickListener listener) {
         this.context = context;
         this.bookList = books;
@@ -42,12 +44,23 @@ public class BookVerticalAdapter extends RecyclerView.Adapter<BookVerticalAdapte
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
         Book book = bookList.get(position);
+
+        // Set dữ liệu
         holder.txtTitle.setText(book.title);
-        holder.txtViews.setText(book.current_readers + " Đang đọc");
-        holder.txtAuthor.setText("Tác giả #" + book.author_name); // Chưa join được tên
+        holder.txtViews.setText(book.current_readers + " đang đọc");
 
-        Glide.with(context).load(book.cover_image_url).into(holder.imgCover);
+        // Nếu bạn có book.author_name thì dùng, không có thì dùng author_id
+        String authorText = (book.author_name != null && !book.author_name.isEmpty())
+                ? book.author_name : "Tác giả #" + book.author_id;
+        holder.txtAuthor.setText(authorText);
 
+        // Load ảnh bằng Glide
+        Glide.with(context)
+                .load(book.cover_image_url)
+                .placeholder(R.drawable.image_load_error)
+                .into(holder.imgCover);
+
+        // Gán sự kiện click
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onBookClick(book);
@@ -57,20 +70,20 @@ public class BookVerticalAdapter extends RecyclerView.Adapter<BookVerticalAdapte
 
     @Override
     public int getItemCount() {
-        return bookList == null ? 0 : bookList.size();
+        return bookList != null ? bookList.size() : 0;
     }
 
+    // ViewHolder
     public static class BookViewHolder extends RecyclerView.ViewHolder {
         ImageView imgCover;
         TextView txtTitle, txtAuthor, txtViews;
 
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtTitle = itemView.findViewById(R.id.tvTitle);     // ✅ Sửa lại: dùng đúng tên biến
-            imgCover = itemView.findViewById(R.id.imgCover);
+            imgCover = itemView.findViewById(R.id.imgBook);
+            txtTitle = itemView.findViewById(R.id.tvTenBook);
             txtAuthor = itemView.findViewById(R.id.txtAuthor);
             txtViews = itemView.findViewById(R.id.txtViews);
         }
     }
-
 }

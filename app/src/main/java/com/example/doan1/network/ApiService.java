@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
     @GET("get_top_books.php")
-    Call<List<Book>> getTopBooks();
+    Call<BookResponse> getTopBooks();
 
     @GET("get_genres.php")
     Call<GenreResponse> getGenres();

@@ -1,6 +1,5 @@
 package com.example.doan1.models;
 
-
 import java.util.List;
 
 public class BookResponse {
