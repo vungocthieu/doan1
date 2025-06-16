@@ -46,7 +46,7 @@ public class TuTruyenFragment extends Fragment {
 
     private void loadSavedBooks() {
         int userId = UserSession.getUserId(getContext());
-        String url = "http://192.168.1.8/api/get_userbooks.php?user_id=" + userId + "&type=saved";
+        String url = "http://192.168.1.153/api/get_userbooks.php?user_id=" + userId + "&type=saved";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {

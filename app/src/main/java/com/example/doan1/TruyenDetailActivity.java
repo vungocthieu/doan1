@@ -74,7 +74,7 @@ public class TruyenDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         bookId = intent.getIntExtra("book_id", -1);
-        tenTruyen = intent.getStringExtra("title");
+        tenTruyen = intent.getStringExtra("tenTruyen");
         tacGia = intent.getStringExtra("tacGia");
         hinhAnh = intent.getStringExtra("cover_image_url");
 
@@ -96,7 +96,7 @@ public class TruyenDetailActivity extends AppCompatActivity {
             imgCover.setImageResource(R.drawable.image_load_error);
         }
 
-        tvStats.setText("842 chương - 311K lượt đọc");
+        tvStats.setText("10 chương - 311K lượt đọc");
 
         List<Fragment> fragments = Arrays.asList(
                 new GioiThieuFragment(),
@@ -118,7 +118,7 @@ public class TruyenDetailActivity extends AppCompatActivity {
                 return;
             }
 
-            String url = "http://192.168.1.8/api/get_first_chapter.php?book_id=" + bookId;
+            String url = "http://192.168.1.153/api/get_first_chapter.php?book_id=" + bookId;
 
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                     response -> {
@@ -128,7 +128,7 @@ public class TruyenDetailActivity extends AppCompatActivity {
 
                                 if (UserSession.isLoggedIn(this)) {
                                     int userId = UserSession.getUserId(this);
-                                    String saveUrl = "http://192.168.1.8/api/save_userbook.php";
+                                    String saveUrl = "http://192.168.1.153/api/save_userbook.php";
 
                                     JSONObject saveBody = new JSONObject();
                                     saveBody.put("user_id", userId);
@@ -170,7 +170,7 @@ public class TruyenDetailActivity extends AppCompatActivity {
         }
 
         int userId = UserSession.getUserId(this);
-        String url = "http://192.168.1.8/api/save_userbook.php";
+        String url = "http://192.168.1.153/api/save_userbook.php";
 
         JSONObject body = new JSONObject();
         try {

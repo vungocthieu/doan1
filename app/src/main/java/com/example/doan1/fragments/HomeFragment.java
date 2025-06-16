@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadNewStories() {
-        String url = "http://192.168.1.8/api/truyen_moi.php";
+        String url = "http://192.168.1.153/api/truyen_moi.php";
         RequestQueue queue = Volley.newRequestQueue(getContext());
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -129,7 +129,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadRecommendedStories() {
-        String url = "http://192.168.1.8/api/truyen_de_cu.php";
+        String url = "http://192.168.1.153/api/truyen_de_cu.php";
         RequestQueue queue = Volley.newRequestQueue(getContext());
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -159,7 +159,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadCompletedStories() {
-        String url = "http://192.168.1.8/api/truyen_hoan_thanh.php";
+        String url = "http://192.168.1.153/api/truyen_hoan_thanh.php";
         RequestQueue queue = Volley.newRequestQueue(getContext());
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -189,7 +189,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void fetchSearchResults(String keyword) {
-        String url = "http://192.168.1.8/api/search_books.php?query=" + keyword;
+        String url = "http://192.168.1.153/api/search_books.php?query=" + keyword;
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,

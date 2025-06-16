@@ -84,7 +84,7 @@ public class BinhLuanFragment extends Fragment {
     }
 
     private void loadBinhLuan() {
-        String url = "http://192.168.1.8/api/reviews.php?book_id=" + bookId;
+        String url = "http://192.168.1.153/api/reviews.php?book_id=" + bookId;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {
@@ -110,7 +110,7 @@ public class BinhLuanFragment extends Fragment {
     }
 
     private void guiBinhLuan(int userId, int bookId, String comment) {
-        String url = "http://192.168.1.8/api/reviews.php";
+        String url = "http://192.168.1.153/api/reviews.php";
 
         JSONObject body = new JSONObject();
         try {

@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void dangKy(String username, String password) {
-        String url = "http://192.168.1.8/api/register.php";
+        String url = "http://192.168.1.153/api/register.php";
 
         JSONObject body = new JSONObject();
         try {

@@ -38,7 +38,7 @@ public class SearchFragment extends Fragment {
     private RecyclerView rvResults;
     private SearchBookAdapter adapter;
     private List<SearchBook> bookList = new ArrayList<>();
-    private static final String SEARCH_URL = "http://192.168.1.8/api/search_books.php?query=";
+    private static final String SEARCH_URL = "http://192.168.1.153/api/search_books.php?query=";
 
     @Nullable
     @Override

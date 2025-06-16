@@ -20,9 +20,16 @@ public class BookVerticalAdapter extends RecyclerView.Adapter<BookVerticalAdapte
     private Context context;
     private List<Book> bookList;
 
-    public BookVerticalAdapter(Context context, List<Book> books) {
+    private OnBookClickListener listener;
+
+    public interface OnBookClickListener {
+        void onBookClick(Book book);
+    }
+
+    public BookVerticalAdapter(Context context, List<Book> books, OnBookClickListener listener) {
         this.context = context;
         this.bookList = books;
+        this.listener = listener;
     }
 
     @NonNull
@@ -37,9 +44,15 @@ public class BookVerticalAdapter extends RecyclerView.Adapter<BookVerticalAdapte
         Book book = bookList.get(position);
         holder.txtTitle.setText(book.title);
         holder.txtViews.setText(book.current_readers + " Đang đọc");
-        holder.txtAuthor.setText("Tác giả #" + book.author_id); // Chưa join được tên
+        holder.txtAuthor.setText("Tác giả #" + book.author_name); // Chưa join được tên
 
         Glide.with(context).load(book.cover_image_url).into(holder.imgCover);
+
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onBookClick(book);
+            }
+        });
     }
 
     @Override
@@ -53,10 +66,11 @@ public class BookVerticalAdapter extends RecyclerView.Adapter<BookVerticalAdapte
 
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
+            txtTitle = itemView.findViewById(R.id.tvTitle);     // ✅ Sửa lại: dùng đúng tên biến
             imgCover = itemView.findViewById(R.id.imgCover);
-            txtTitle = itemView.findViewById(R.id.tvTitle);
             txtAuthor = itemView.findViewById(R.id.txtAuthor);
             txtViews = itemView.findViewById(R.id.txtViews);
         }
     }
+
 }

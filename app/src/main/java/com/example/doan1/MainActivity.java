@@ -1,12 +1,10 @@
 package com.example.doan1;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.doan1.fragments.AccountFragment;
 import com.example.doan1.fragments.CategoryFragment;
 import com.example.doan1.fragments.HomeFragment;
 import com.example.doan1.fragments.LibraryFragment;

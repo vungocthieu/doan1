@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void dangNhap(String username, String password) {
-        String url = "http://192.168.1.8/api/login.php";
+        String url = "http://192.168.1.153/api/login.php";
 
         JSONObject body = new JSONObject();
         try {

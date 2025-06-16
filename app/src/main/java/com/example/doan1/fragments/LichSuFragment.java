@@ -45,7 +45,7 @@ public class LichSuFragment extends Fragment {
 
     private void loadHistory() {
         int userId = UserSession.getUserId(getContext());
-        String url = "http://192.168.1.8/api/get_userbooks.php?user_id=" + userId + "&type=history";
+        String url = "http://192.168.1.153/api/get_userbooks.php?user_id=" + userId + "&type=history";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {

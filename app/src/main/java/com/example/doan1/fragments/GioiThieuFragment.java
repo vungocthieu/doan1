@@ -50,7 +50,7 @@ public class GioiThieuFragment extends Fragment {
 
     private void loadGioiThieu(int bookId) {
 
-        String url = "http://192.168.1.8/api/gioi_thieu.php?book_id=" + bookId;
+        String url = "http://192.168.1.153/api/gioi_thieu.php?book_id=" + bookId;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {

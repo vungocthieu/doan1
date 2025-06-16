@@ -68,7 +68,7 @@ public class TuTruyenAdapter extends RecyclerView.Adapter<TuTruyenAdapter.ViewHo
 
         holder.btnDelete.setOnClickListener(v -> {
             int userId = UserSession.getUserId(context);
-            String url = "http://192.168.1.8/api/delete_userbook.php";
+            String url = "http://172.16.141.4/api/delete_userbook.php";
 
             JSONObject body = new JSONObject();
             try {

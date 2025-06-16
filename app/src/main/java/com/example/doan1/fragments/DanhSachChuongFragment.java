@@ -51,7 +51,7 @@ public class DanhSachChuongFragment extends Fragment {
     }
 
     private void loadChapters(int bookId) {
-        String url = "http://192.168.1.8/api/chuong.php?book_id=" + bookId;
+        String url = "http://192.168.1.153/api/chuong.php?book_id=" + bookId;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {

@@ -51,8 +51,8 @@ public class CungTacGiaAdapter extends RecyclerView.Adapter<CungTacGiaAdapter.Tr
 
         public TruyenViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgTruyen = itemView.findViewById(R.id.imgBook);
-            tvTen = itemView.findViewById(R.id.tvTenBook);
+            imgTruyen = itemView.findViewById(R.id.imgCover);
+            tvTen = itemView.findViewById(R.id.tvTitle);
         }
     }
 }

@@ -55,7 +55,7 @@ public class ReadActivity extends AppCompatActivity {
     }
 
     private void loadChapter(int chapterId) {
-        String url = "http://192.168.1.8/api/noi_dung_chuong.php?chuong_id=" + chapterId;
+        String url = "http://192.168.1.153/api/noi_dung_chuong.php?chuong_id=" + chapterId;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
