@@ -39,7 +39,7 @@ public class ChuongAdapter extends RecyclerView.Adapter<ChuongAdapter.ChuongView
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ReadActivity.class);
-            intent.putExtra("chuong_id", chuong.getId());
+            intent.putExtra("chapter_id", chuong.getId());
             context.startActivity(intent);
         });
     }

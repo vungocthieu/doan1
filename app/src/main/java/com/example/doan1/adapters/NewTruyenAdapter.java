@@ -39,13 +39,13 @@ public class NewTruyenAdapter extends RecyclerView.Adapter<NewTruyenAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         Truyen t = list.get(position);
         holder.tvTen.setText(t.getTen());
-        holder.tvTacGia.setText(t.getTacgia());
+        holder.tvTacGia.setText(t.getTacGia());
         Glide.with(context).load(t.getHinhanh()).into(holder.imgTruyen);
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, TruyenDetailActivity.class);
             intent.putExtra("tenTruyen", t.getTen());
-            intent.putExtra("tacGia", t.getTacgia());
+            intent.putExtra("tacGia", t.getTacGia());
             intent.putExtra("hinhAnh", t.getHinhanh());
             intent.putExtra("book_id", t.getId());
             context.startActivity(intent);

@@ -1,5 +1,6 @@
 package com.example.doan1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,10 +11,8 @@ import com.example.doan1.fragments.CategoryFragment;
 import com.example.doan1.fragments.HomeFragment;
 import com.example.doan1.fragments.LibraryFragment;
 import com.example.doan1.fragments.RankFragment;
-import com.example.doan1.fragments.SearchFragment;
+import com.example.doan1.fragments.TaiKhoanFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import com.example.doan1.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (id == R.id.nav_rank) {
                 selectedFragment = new RankFragment();
             } else if (id == R.id.nav_account) {
-                selectedFragment = new AccountFragment();
+                selectedFragment = new TaiKhoanFragment();
             }
-
 
             if (selectedFragment != null) {
                 loadFragment(selectedFragment);

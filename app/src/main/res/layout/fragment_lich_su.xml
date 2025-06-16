@@ -1,0 +1,22 @@
+<!-- fragment_lich_su.xml & fragment_tu_truyen.xml -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#121212"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerLichSu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Không có dữ liệu"
+        android:textColor="#aaa"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+</FrameLayout>

@@ -12,7 +12,18 @@
         android:layout_height="wrap_content"
         android:padding="12dp">
 
-        <!-- THANH TÌM KIẾM -->
+        <!-- 👤 Tên người dùng -->
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xin chào"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 🔍 THANH TÌM KIẾM -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,7 +52,7 @@
                 android:inputType="text" />
         </LinearLayout>
 
-        <!-- ĐỀ CỬ -->
+        <!-- 🌟 ĐỀ CỬ -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +69,6 @@
             android:layout_marginTop="4dp"
             android:nestedScrollingEnabled="false"/>
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerRealtime"
             android:layout_width="match_parent"
@@ -66,7 +76,7 @@
             android:layout_marginTop="4dp"
             android:nestedScrollingEnabled="false" />
 
-        <!-- MỚI ĐĂNG -->
+        <!-- 🆕 MỚI ĐĂNG -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,7 +93,7 @@
             android:layout_marginTop="4dp"
             android:nestedScrollingEnabled="false" />
 
-        <!-- MỚI HOÀN THÀNH -->
+        <!-- ✅ MỚI HOÀN THÀNH -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,6 +109,26 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:nestedScrollingEnabled="false" />
+
+        <!-- 🔎 KẾT QUẢ TÌM KIẾM -->
+        <TextView
+            android:id="@+id/tvSearchResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kết quả tìm kiếm"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSearchResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone" />
 
     </LinearLayout>
 </ScrollView>
